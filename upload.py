@@ -20,15 +20,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 import time
-import logging
 import signal
 import sys
-
-
 import serial
 import serial.tools.list_ports
-
-logger = logging.getLogger(__name__)
 
 
 class halocode_config():
@@ -269,22 +264,10 @@ class halocode_communication():
                 running = False
                 self.show_status_message("Complete file transfer!")
                 self.process_status = 0
-        else:
-            pass
 
 
     def show_status_message(self, message):
         print(message)
-
-class HalocodeMode():
-    valid_boards = [
-        (6790, 29987),  # Makeblock Device Vid/Pid
-    ]
-
-    python_script = ''
-    
-    def __init__(self):
-        self.communication = halocode_communication()
 
 
 def find_port(vid=6790, pid=29987):
@@ -335,7 +318,6 @@ def upload_file(path):
                 comm.ftp_process.push_chars(ser.read_all())
 
             time.sleep(0.25)
-
 
 
 def show_message(m, info):
