@@ -3,6 +3,8 @@
 Upload script for [makeblock halocode](https://en.wikipedia.org/wiki/Makeblock#1.6_Makeblock_Halocode)
 Source code has been extracted from this [project](https://github.com/FFtust/mu)
 
+![halocode](halocode.jpg)
+
 ## Usage
 ```bash
 # on linux
