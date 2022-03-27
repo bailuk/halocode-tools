@@ -13,6 +13,6 @@ python upload.py samples\test.py
 ```
 
 ## Links
-- (Python Mu Editor for halocode)[http://docs.makeblock.com/halocode/en/tutorials/use-python-mu.html]
-- (Python Mu Editor original)[https://codewith.mu/]
-- (halocode API reference)[http://docs.makeblock.com/halocode/en/block-reference/block-reference.html]
+- [Python Mu Editor for halocode](http://docs.makeblock.com/halocode/en/tutorials/use-python-mu.html)
+- [Python Mu Editor original](https://codewith.mu/)
+- [halocode API reference](http://docs.makeblock.com/halocode/en/block-reference/block-reference.html)
