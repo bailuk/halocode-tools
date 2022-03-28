@@ -11,7 +11,16 @@ Source code has been extracted from this [project](https://github.com/FFtust/mu)
 
 # on windows
 python upload.py samples\test.py 
+
 ```
+
+## Run on python embedded
+- Download Python embedded: https://www.python.org/downloads/release/python-3104/
+- Unzip to `halocode-tools/python`
+- Download Serial module: 
+- Install Serial module to halocode-tools/python/Lib/site-packages: `python\python.exe setup.py install`
+- Add `Lib`  and `Lib/site-packages` to `halocode-tools/python/pythonXX._pth`
+- Run `python\python.exe upload.py samples\test.py`
 
 ## Links
 
