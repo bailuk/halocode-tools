@@ -22,8 +22,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import time
 import signal
 import sys
-import serial
+import serial  # https://pyserial.readthedocs.io/en/latest/pyserial_api.html
 import serial.tools.list_ports
+
+
+debug = False
+use_dsrdtr = False
 
 
 class halocode_config():
@@ -246,12 +250,14 @@ class halocode_communication():
         if self.process_status == 0:
             frame = self.file_content.create_head_frame(self.target_file_path)
             if frame:
+               if debug: print(f'write frame: ${frame}')
                ser.write(frame)
                self.process_status = 1
         else:
             frame = self.file_content.get_next_block()
             
             if frame:
+                if debug: print(f'write frame: ${frame}')
                 ser.write(frame)
                 self.show_status_message("transmitting: %s%s" %('%', self.file_content.get_current_percentage(), ))
 
@@ -306,7 +312,7 @@ def upload_file(path):
         print(f'uploading {path} to {port} as {target_path}')
         print('press Ctrl+C to cancel')
 
-        ser = serial.Serial(port, 115200, dsrdtr=True)
+        ser = serial.Serial(port, 115200, dsrdtr=use_dsrdtr)
         script = data.encode('utf-8')
             
         comm.update_paras(ser, script, target_path)
@@ -314,7 +320,8 @@ def upload_file(path):
 
         global running
         while running:
-            if ser.in_waiting > 0:
+            if ser.in_waiting > 0 and ser.out_waiting == 0:
+                if debug: print('input received')
                 comm.ftp_process.push_chars(ser.read_all())
 
             time.sleep(0.25)
@@ -339,4 +346,3 @@ if len(sys.argv) < 2:
 
 else:
     upload_file(sys.argv[1])
-
