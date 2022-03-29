@@ -1,0 +1,1784 @@
+{
+    "random.getrandbits(n)":{
+        "prefix": "random.getrandbits(n)",
+        "body": "random.getrandbits(n)",
+        "description": [
+            "Return an integer with n random bits. "
+        ]
+    },
+    "random.seed(n)":{
+        "prefix": "random.seed(n)",
+        "body": "random.seed(n)",
+        "description": [
+            "Initialise the random number generator with a known integer 'n'. "
+        ]
+    },
+    "random.randint(a, b)":{
+        "prefix": "random.randint(a, b)",
+        "body": "random.randint(a, b)",
+        "description": [
+            "Return a random whole number between a and b (inclusive). "
+        ]
+    },
+    "random.randrange(stop)":{
+        "prefix": "random.randrange(stop)",
+        "body": "random.randrange(stop)",
+        "description": [
+            "Return a random whole number between 0 and up to (but not including) stop. "
+        ]
+    },
+    "random.choice(seq)":{
+        "prefix": "random.choice(seq)",
+        "body": "random.choice(seq)",
+        "description": [
+            "Return a randomly selected element from a sequence of objects (such as a list). "
+        ]
+    },
+    "random.random()":{
+        "prefix": "random.random()",
+        "body": "random.random()",
+        "description": [
+            "Return a random floating point number between 0.0 and 1.0. "
+        ]
+    },
+    "random.uniform(a, b)":{
+        "prefix": "random.uniform(a, b)",
+        "body": "random.uniform(a, b)",
+        "description": [
+            "Return a random floating point number between a and b (inclusive). "
+        ]
+    },
+    "os.listdir()":{
+        "prefix": "os.listdir()",
+        "body": "os.listdir()",
+        "description": [
+            "Return a list of the names of all the files contained within the local\non-device file system. "
+        ]
+    },
+    "os.remove(filename)":{
+        "prefix": "os.remove(filename)",
+        "body": "os.remove(filename)",
+        "description": [
+            "Remove (delete) the file named filename. "
+        ]
+    },
+    "os.size(filename)":{
+        "prefix": "os.size(filename)",
+        "body": "os.size(filename)",
+        "description": [
+            "Return the size, in bytes, of the file named filename. "
+        ]
+    },
+    "os.uname()":{
+        "prefix": "os.uname()",
+        "body": "os.uname()",
+        "description": [
+            "Return information about MicroPython and the device. "
+        ]
+    },
+    "sys.version":{
+        "prefix": "sys.version",
+        "body": "sys.version",
+        "description": [
+        ]
+    },
+    "sys.version_info":{
+        "prefix": "sys.version_info",
+        "body": "sys.version_info",
+        "description": [
+        ]
+    },
+    "sys.implementation":{
+        "prefix": "sys.implementation",
+        "body": "sys.implementation",
+        "description": [
+        ]
+    },
+    "sys.platform":{
+        "prefix": "sys.platform",
+        "body": "sys.platform",
+        "description": [
+        ]
+    },
+    "sys.byteorder":{
+        "prefix": "sys.byteorder",
+        "body": "sys.byteorder",
+        "description": [
+        ]
+    },
+    "sys.print_exception(ex)":{
+        "prefix": "sys.print_exception(ex)",
+        "body": "sys.print_exception(ex)",
+        "description": [
+            "Print to the REPL information about the exception 'ex'. "
+        ]
+    },
+    "time.sleep()":{
+        "prefix": "time.sleep()",
+        "body": "time.sleep()",
+        "description": [
+        ]
+    },
+    "mbuild.dc_motor_driver.set_power(speed, index = 1)":{
+        "prefix": "mbuild.dc_motor_driver.set_power(speed, index = 1)",
+        "body": "mbuild.dc_motor_driver.set_power(speed, index = 1)",
+        "description": [
+            "Set the speed. "
+        ]
+    },
+    "mbuild.dc_motor_driver.change_power(speed, index = 1)":{
+        "prefix": "mbuild.dc_motor_driver.change_power(speed, index = 1)",
+        "body": "mbuild.dc_motor_driver.change_power(speed, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dc_motor_driver.get_power(index = 1)":{
+        "prefix": "mbuild.dc_motor_driver.get_power(index = 1)",
+        "body": "mbuild.dc_motor_driver.get_power(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dc_motor_driver.get_load(index = 1)":{
+        "prefix": "mbuild.dc_motor_driver.get_load(index = 1)",
+        "body": "mbuild.dc_motor_driver.get_load(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dc_motor_driver.stop_all()":{
+        "prefix": "mbuild.dc_motor_driver.stop_all()",
+        "body": "mbuild.dc_motor_driver.stop_all()",
+        "description": [
+        ]
+    },
+    "mbuild.dual_rgb_sensor.study(index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.study(index = 1)",
+        "body": "mbuild.dual_rgb_sensor.study(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dual_rgb_sensor.get_all_data(index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.get_all_data(index = 1)",
+        "body": "mbuild.dual_rgb_sensor.get_all_data(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dual_rgb_sensor.get_intensity(channel, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.get_intensity(channel, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.get_intensity(channel, index = 1)",
+        "description": [
+            "channel:'RGB1'/'RGB2' "
+        ]
+    },
+    "mbuild.dual_rgb_sensor.is_state(state, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.is_state(state, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.is_state(state, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dual_rgb_sensor.get_offset_track_value(index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.get_offset_track_value(index = 1)",
+        "body": "mbuild.dual_rgb_sensor.get_offset_track_value(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dual_rgb_sensor.is_color(channel, color, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.is_color(channel, color, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.is_color(channel, color, index = 1)",
+        "description": [
+            "channel:'RGB1'/'RGB2' "
+        ]
+    },
+    "mbuild.dual_rgb_sensor.set_led_color(color, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.set_led_color(color, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.set_led_color(color, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dual_rgb_sensor.is_on_track(channel, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.is_on_track(channel, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.is_on_track(channel, index = 1)",
+        "description": [
+            "channel:'RGB1'/'RGB2' "
+        ]
+    },
+    "mbuild.dual_rgb_sensor.is_on_background(channel, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.is_on_background(channel, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.is_on_background(channel, index = 1)",
+        "description": [
+            "channel:'RGB1'/'RGB2' "
+        ]
+    },
+    "mbuild.dual_rgb_sensor.set_motor_diff_speed_kp(value)":{
+        "prefix": "mbuild.dual_rgb_sensor.set_motor_diff_speed_kp(value)",
+        "body": "mbuild.dual_rgb_sensor.set_motor_diff_speed_kp(value)",
+        "description": [
+        ]
+    },
+    "mbuild.dual_rgb_sensor.get_motor_diff_speed(index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.get_motor_diff_speed(index = 1)",
+        "body": "mbuild.dual_rgb_sensor.get_motor_diff_speed(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dual_rgb_sensor.get_red(channel, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.get_red(channel, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.get_red(channel, index = 1)",
+        "description": [
+            "channel:'RGB1'/'RGB2' "
+        ]
+    },
+    "mbuild.dual_rgb_sensor.get_green(channel, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.get_green(channel, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.get_green(channel, index = 1)",
+        "description": [
+            "channel:'RGB1'/'RGB2' "
+        ]
+    },
+    "mbuild.dual_rgb_sensor.get_blue(channel, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.get_blue(channel, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.get_blue(channel, index = 1)",
+        "description": [
+            "channel:'RGB1'/'RGB2' "
+        ]
+    },
+    "mbuild.dual_rgb_sensor.get_reflected_light(channel, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.get_reflected_light(channel, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.get_reflected_light(channel, index = 1)",
+        "description": [
+            "channel:'RGB1'/'RGB2' "
+        ]
+    },
+    "mbuild.dual_rgb_sensor.set_light_color(color, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.set_light_color(color, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.set_light_color(color, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.dual_rgb_sensor.set_all_data_report_mode(mode, timestamp, index = 1)":{
+        "prefix": "mbuild.dual_rgb_sensor.set_all_data_report_mode(mode, timestamp, index = 1)",
+        "body": "mbuild.dual_rgb_sensor.set_all_data_report_mode(mode, timestamp, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.humiture_sensor.get_relative_humidity(index = 1)":{
+        "prefix": "mbuild.humiture_sensor.get_relative_humidity(index = 1)",
+        "body": "mbuild.humiture_sensor.get_relative_humidity(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.humiture_sensor.get_temperature(opt = 'celsius', index = 1)":{
+        "prefix": "mbuild.humiture_sensor.get_temperature(opt = 'celsius', index = 1)",
+        "body": "mbuild.humiture_sensor.get_temperature(opt = 'celsius', index = 1)",
+        "description": [
+            "opt:'celsius'/'fahrenheit' "
+        ]
+    },
+    "mbuild.led_panel.show_image(image, pos_x = 0, pos_y = 0, time_s = None, index = 1)":{
+        "prefix": "mbuild.led_panel.show_image(image, pos_x = 0, pos_y = 0, time_s = None, index = 1)",
+        "body": "mbuild.led_panel.show_image(image, pos_x = 0, pos_y = 0, time_s = None, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_panel.show(var, pos_x = None, pos_y = None, wait = True, index = 1)":{
+        "prefix": "mbuild.led_panel.show(var, pos_x = None, pos_y = None, wait = True, index = 1)",
+        "body": "mbuild.led_panel.show(var, pos_x = None, pos_y = None, wait = True, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_panel.set_pixel(pos_x, pos_y, status, index = 1)":{
+        "prefix": "mbuild.led_panel.set_pixel(pos_x, pos_y, status, index = 1)",
+        "body": "mbuild.led_panel.set_pixel(pos_x, pos_y, status, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_panel.get_pixel(pos_x, pos_y, index = 1)":{
+        "prefix": "mbuild.led_panel.get_pixel(pos_x, pos_y, index = 1)",
+        "body": "mbuild.led_panel.get_pixel(pos_x, pos_y, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_panel.toggle_pixel(pos_x, pos_y, index = 1)":{
+        "prefix": "mbuild.led_panel.toggle_pixel(pos_x, pos_y, index = 1)",
+        "body": "mbuild.led_panel.toggle_pixel(pos_x, pos_y, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_panel.clear(index = 1)":{
+        "prefix": "mbuild.led_panel.clear(index = 1)",
+        "body": "mbuild.led_panel.clear(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.set_single(led_index, red_value, green_value, blue_value, index = 1)":{
+        "prefix": "mbuild.led_strip.set_single(led_index, red_value, green_value, blue_value, index = 1)",
+        "body": "mbuild.led_strip.set_single(led_index, red_value, green_value, blue_value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.set_all(red_value, green_value, blue_value, index = 1)":{
+        "prefix": "mbuild.led_strip.set_all(red_value, green_value, blue_value, index = 1)",
+        "body": "mbuild.led_strip.set_all(red_value, green_value, blue_value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.off_all(index = 1)":{
+        "prefix": "mbuild.led_strip.off_all(index = 1)",
+        "body": "mbuild.led_strip.off_all(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.set_red(led_index, value, index = 1)":{
+        "prefix": "mbuild.led_strip.set_red(led_index, value, index = 1)",
+        "body": "mbuild.led_strip.set_red(led_index, value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.set_green(led_index, value, index = 1)":{
+        "prefix": "mbuild.led_strip.set_green(led_index, value, index = 1)",
+        "body": "mbuild.led_strip.set_green(led_index, value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.set_blue(led_index, value, index = 1)":{
+        "prefix": "mbuild.led_strip.set_blue(led_index, value, index = 1)",
+        "body": "mbuild.led_strip.set_blue(led_index, value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.change_red(led_index, value, index = 1)":{
+        "prefix": "mbuild.led_strip.change_red(led_index, value, index = 1)",
+        "body": "mbuild.led_strip.change_red(led_index, value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.change_green(led_index, value, index = 1)":{
+        "prefix": "mbuild.led_strip.change_green(led_index, value, index = 1)",
+        "body": "mbuild.led_strip.change_green(led_index, value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.change_blue(led_index, value, index = 1)":{
+        "prefix": "mbuild.led_strip.change_blue(led_index, value, index = 1)",
+        "body": "mbuild.led_strip.change_blue(led_index, value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.set_mode(mode, index =1)":{
+        "prefix": "mbuild.led_strip.set_mode(mode, index =1)",
+        "body": "mbuild.led_strip.set_mode(mode, index =1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.set_block(led_num, data, index = 1)":{
+        "prefix": "mbuild.led_strip.set_block(led_num, data, index = 1)",
+        "body": "mbuild.led_strip.set_block(led_num, data, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.led_strip.set_effect(mode, speed, data, index = 1)":{
+        "prefix": "mbuild.led_strip.set_effect(mode, speed, data, index = 1)",
+        "body": "mbuild.led_strip.set_effect(mode, speed, data, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.pir_sensor.is_activated(index = 1)":{
+        "prefix": "mbuild.pir_sensor.is_activated(index = 1)",
+        "body": "mbuild.pir_sensor.is_activated(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.pir_sensor.get_count(index = 1)":{
+        "prefix": "mbuild.pir_sensor.get_count(index = 1)",
+        "body": "mbuild.pir_sensor.get_count(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.pir_sensor.reset_count(index = 1)":{
+        "prefix": "mbuild.pir_sensor.reset_count(index = 1)",
+        "body": "mbuild.pir_sensor.reset_count(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.ranging_sensor.get_distance(index = 1)":{
+        "prefix": "mbuild.ranging_sensor.get_distance(index = 1)",
+        "body": "mbuild.ranging_sensor.get_distance(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.servo_driver.set_angle(position, index = 1)":{
+        "prefix": "mbuild.servo_driver.set_angle(position, index = 1)",
+        "body": "mbuild.servo_driver.set_angle(position, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.servo_driver.change_angle(position, index = 1)":{
+        "prefix": "mbuild.servo_driver.change_angle(position, index = 1)",
+        "body": "mbuild.servo_driver.change_angle(position, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.servo_driver.get_angle(index = 1)":{
+        "prefix": "mbuild.servo_driver.get_angle(index = 1)",
+        "body": "mbuild.servo_driver.get_angle(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.servo_driver.get_load(index = 1)":{
+        "prefix": "mbuild.servo_driver.get_load(index = 1)",
+        "body": "mbuild.servo_driver.get_load(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.slider.get_value(index = 1)":{
+        "prefix": "mbuild.slider.get_value(index = 1)",
+        "body": "mbuild.slider.get_value(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.speaker.stop_sounds(index = 1)":{
+        "prefix": "mbuild.speaker.stop_sounds(index = 1)",
+        "body": "mbuild.speaker.stop_sounds(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.speaker.set_volume(value, index = 1)":{
+        "prefix": "mbuild.speaker.set_volume(value, index = 1)",
+        "body": "mbuild.speaker.set_volume(value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.speaker.change_volume(value, index = 1)":{
+        "prefix": "mbuild.speaker.change_volume(value, index = 1)",
+        "body": "mbuild.speaker.change_volume(value, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.speaker.get_volume(index = 1)":{
+        "prefix": "mbuild.speaker.get_volume(index = 1)",
+        "body": "mbuild.speaker.get_volume(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.speaker.play_note(note, beat = None, index = 1)":{
+        "prefix": "mbuild.speaker.play_note(note, beat = None, index = 1)",
+        "body": "mbuild.speaker.play_note(note, beat = None, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.speaker.play_tone(frequency, time_s = None, index = 1)":{
+        "prefix": "mbuild.speaker.play_tone(frequency, time_s = None, index = 1)",
+        "body": "mbuild.speaker.play_tone(frequency, time_s = None, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.speaker.play_melody(sound_name, index = 1)":{
+        "prefix": "mbuild.speaker.play_melody(sound_name, index = 1)",
+        "body": "mbuild.speaker.play_melody(sound_name, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.speaker.play_melody_until_done(sound_name, index = 1)":{
+        "prefix": "mbuild.speaker.play_melody_until_done(sound_name, index = 1)",
+        "body": "mbuild.speaker.play_melody_until_done(sound_name, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.speaker.is_playing(index = 1)":{
+        "prefix": "mbuild.speaker.is_playing(index = 1)",
+        "body": "mbuild.speaker.is_playing(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.ultrasonic_sensor.get_distance(index = 1)":{
+        "prefix": "mbuild.ultrasonic_sensor.get_distance(index = 1)",
+        "body": "mbuild.ultrasonic_sensor.get_distance(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.angle_sensor.get_angle(index = 1)":{
+        "prefix": "mbuild.angle_sensor.get_angle(index = 1)",
+        "body": "mbuild.angle_sensor.get_angle(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.angle_sensor.get_angle_speed(index = 1)":{
+        "prefix": "mbuild.angle_sensor.get_angle_speed(index = 1)",
+        "body": "mbuild.angle_sensor.get_angle_speed(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.angle_sensor.is_rotating_clockwise(index = 1)":{
+        "prefix": "mbuild.angle_sensor.is_rotating_clockwise(index = 1)",
+        "body": "mbuild.angle_sensor.is_rotating_clockwise(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.angle_sensor.is_rotating_anticlockwise(index = 1)":{
+        "prefix": "mbuild.angle_sensor.is_rotating_anticlockwise(index = 1)",
+        "body": "mbuild.angle_sensor.is_rotating_anticlockwise(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.angle_sensor.reset_angle(index = 1)":{
+        "prefix": "mbuild.angle_sensor.reset_angle(index = 1)",
+        "body": "mbuild.angle_sensor.reset_angle(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.button.is_pressed(index = 1)":{
+        "prefix": "mbuild.button.is_pressed(index = 1)",
+        "body": "mbuild.button.is_pressed(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.button.get_count(index = 1)":{
+        "prefix": "mbuild.button.get_count(index = 1)",
+        "body": "mbuild.button.get_count(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.button.reset_count(index = 1):":{
+        "prefix": "mbuild.button.reset_count(index = 1):",
+        "body": "mbuild.button.reset_count(index = 1):",
+        "description": [
+        ]
+    },
+    "mbuild.flame_sensor.is_active(index = 1)":{
+        "prefix": "mbuild.flame_sensor.is_active(index = 1)",
+        "body": "mbuild.flame_sensor.is_active(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.flame_sensor.get_value(index = 1)":{
+        "prefix": "mbuild.flame_sensor.get_value(index = 1)",
+        "body": "mbuild.flame_sensor.get_value(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.mq2_gas_sensor.is_active(threshold_level = 'middle', index = 1)":{
+        "prefix": "mbuild.mq2_gas_sensor.is_active(threshold_level = 'middle', index = 1)",
+        "body": "mbuild.mq2_gas_sensor.is_active(threshold_level = 'middle', index = 1)",
+        "description": [
+            "level:'middle'/'high'/'low' "
+        ]
+    },
+    "mbuild.mq2_gas_sensor.get_value(index = 1)":{
+        "prefix": "mbuild.mq2_gas_sensor.get_value(index = 1)",
+        "body": "mbuild.mq2_gas_sensor.get_value(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.ir_transceiver.receive(index = 1)":{
+        "prefix": "mbuild.ir_transceiver.receive(index = 1)",
+        "body": "mbuild.ir_transceiver.receive(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.ir_transceiver.send(message, index = 1)":{
+        "prefix": "mbuild.ir_transceiver.send(message, index = 1)",
+        "body": "mbuild.ir_transceiver.send(message, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.ir_transceiver.send_learned_result(id = 0, index = 1)":{
+        "prefix": "mbuild.ir_transceiver.send_learned_result(id = 0, index = 1)",
+        "body": "mbuild.ir_transceiver.send_learned_result(id = 0, index = 1)",
+        "description": [
+            "id:0/1 "
+        ]
+    },
+    "mbuild.ir_transceiver.learn(time_ms = 2000, id = 0, index = 1)":{
+        "prefix": "mbuild.ir_transceiver.learn(time_ms = 2000, id = 0, index = 1)",
+        "body": "mbuild.ir_transceiver.learn(time_ms = 2000, id = 0, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.ir_transceiver.receive_remote_code(index = 1)":{
+        "prefix": "mbuild.ir_transceiver.receive_remote_code(index = 1)",
+        "body": "mbuild.ir_transceiver.receive_remote_code(index = 1)",
+        "description": [
+            "return a list:[address, value] "
+        ]
+    },
+    "mbuild.joystick.get_value(opt, index = 1)":{
+        "prefix": "mbuild.joystick.get_value(opt, index = 1)",
+        "body": "mbuild.joystick.get_value(opt, index = 1)",
+        "description": [
+            "opt:'x'/'y'/'all' "
+        ]
+    },
+    "mbuild.joystick.is_active(opt, index = 1)":{
+        "prefix": "mbuild.joystick.is_active(opt, index = 1)",
+        "body": "mbuild.joystick.is_active(opt, index = 1)",
+        "description": [
+            "opt:'x'/'y'/'all' "
+        ]
+    },
+    "mbuild.light_sensor.get_value(index = 1)":{
+        "prefix": "mbuild.light_sensor.get_value(index = 1)",
+        "body": "mbuild.light_sensor.get_value(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.get_acceleration(axis, index = 1)":{
+        "prefix": "mbuild.motion_sensor.get_acceleration(axis, index = 1)",
+        "body": "mbuild.motion_sensor.get_acceleration(axis, index = 1)",
+        "description": [
+            "axis:'x'/'y'/'z' "
+        ]
+    },
+    "mbuild.motion_sensor.get_gyroscope(axis, index = 1)":{
+        "prefix": "mbuild.motion_sensor.get_gyroscope(axis, index = 1)",
+        "body": "mbuild.motion_sensor.get_gyroscope(axis, index = 1)",
+        "description": [
+            "'x'/'y'/'z' "
+        ]
+    },
+    "mbuild.motion_sensor.get_rotation(axis, index = 1)":{
+        "prefix": "mbuild.motion_sensor.get_rotation(axis, index = 1)",
+        "body": "mbuild.motion_sensor.get_rotation(axis, index = 1)",
+        "description": [
+            "'x'/'y'/'z' "
+        ]
+    },
+    "mbuild.motion_sensor.reset_rotation(axis = 'all', index = 1)":{
+        "prefix": "mbuild.motion_sensor.reset_rotation(axis = 'all', index = 1)",
+        "body": "mbuild.motion_sensor.reset_rotation(axis = 'all', index = 1)",
+        "description": [
+            "'x'/'y'/'z'/'all' "
+        ]
+    },
+    "mbuild.motion_sensor.is_shaked(level = 'usual', index = 1)":{
+        "prefix": "mbuild.motion_sensor.is_shaked(level = 'usual', index = 1)",
+        "body": "mbuild.motion_sensor.is_shaked(level = 'usual', index = 1)",
+        "description": [
+            "level:'light'/'usual'/'strong' "
+        ]
+    },
+    "mbuild.motion_sensor.get_shake_strength(index = 1)":{
+        "prefix": "mbuild.motion_sensor.get_shake_strength(index = 1)",
+        "body": "mbuild.motion_sensor.get_shake_strength(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.get_pitch(index = 1)":{
+        "prefix": "mbuild.motion_sensor.get_pitch(index = 1)",
+        "body": "mbuild.motion_sensor.get_pitch(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.get_roll(index = 1)":{
+        "prefix": "mbuild.motion_sensor.get_roll(index = 1)",
+        "body": "mbuild.motion_sensor.get_roll(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.is_tilted_left(index = 1)":{
+        "prefix": "mbuild.motion_sensor.is_tilted_left(index = 1)",
+        "body": "mbuild.motion_sensor.is_tilted_left(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.is_tilted_right(index = 1)":{
+        "prefix": "mbuild.motion_sensor.is_tilted_right(index = 1)",
+        "body": "mbuild.motion_sensor.is_tilted_right(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.is_tilted_forward(index = 1)":{
+        "prefix": "mbuild.motion_sensor.is_tilted_forward(index = 1)",
+        "body": "mbuild.motion_sensor.is_tilted_forward(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.is_tilted_backward(index = 1)":{
+        "prefix": "mbuild.motion_sensor.is_tilted_backward(index = 1)",
+        "body": "mbuild.motion_sensor.is_tilted_backward(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.is_face_up(index = 1)":{
+        "prefix": "mbuild.motion_sensor.is_face_up(index = 1)",
+        "body": "mbuild.motion_sensor.is_face_up(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.is_face_down(index = 1)":{
+        "prefix": "mbuild.motion_sensor.is_face_down(index = 1)",
+        "body": "mbuild.motion_sensor.is_face_down(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.motion_sensor.is_upright(index = 1)":{
+        "prefix": "mbuild.motion_sensor.is_upright(index = 1)",
+        "body": "mbuild.motion_sensor.is_upright(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.multi_touch.is_active(position, index = 1)":{
+        "prefix": "mbuild.multi_touch.is_active(position, index = 1)",
+        "body": "mbuild.multi_touch.is_active(position, index = 1)",
+        "description": [
+            "position:1~8 "
+        ]
+    },
+    "mbuild.multi_touch.get_value(position, index = 1)":{
+        "prefix": "mbuild.multi_touch.get_value(position, index = 1)",
+        "body": "mbuild.multi_touch.get_value(position, index = 1)",
+        "description": [
+            "position:1~8 "
+        ]
+    },
+    "mbuild.multi_touch.reset_threshold(index = 1)":{
+        "prefix": "mbuild.multi_touch.reset_threshold(index = 1)",
+        "body": "mbuild.multi_touch.reset_threshold(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.multi_touch.set_sensitivity(sen, index = 1)":{
+        "prefix": "mbuild.multi_touch.set_sensitivity(sen, index = 1)",
+        "body": "mbuild.multi_touch.set_sensitivity(sen, index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.soil_moisture.get_humidity(index = 1)":{
+        "prefix": "mbuild.soil_moisture.get_humidity(index = 1)",
+        "body": "mbuild.soil_moisture.get_humidity(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.sound_sensor.get_loudness(index = 1)":{
+        "prefix": "mbuild.sound_sensor.get_loudness(index = 1)",
+        "body": "mbuild.sound_sensor.get_loudness(index = 1)",
+        "description": [
+        ]
+    },
+    "mbuild.temp_sensor.get_temperature(opt = 'celsius', index = 1)":{
+        "prefix": "mbuild.temp_sensor.get_temperature(opt = 'celsius', index = 1)",
+        "body": "mbuild.temp_sensor.get_temperature(opt = 'celsius', index = 1)",
+        "description": [
+            "opt:'celsius'/'fahrenheit' "
+        ]
+    },
+    "halo.get_timer()":{
+        "prefix": "halo.get_timer()",
+        "body": "halo.get_timer()",
+        "description": [
+        ]
+    },
+    "halo.reset_timer()":{
+        "prefix": "halo.reset_timer()",
+        "body": "halo.reset_timer()",
+        "description": [
+        ]
+    },
+    "halo.button.is_pressed()":{
+        "prefix": "halo.button.is_pressed()",
+        "body": "halo.button.is_pressed()",
+        "description": [
+        ]
+    },
+    "halo.cloud_message.start(topic_head":{
+        "prefix": "halo.cloud_message.start(topic_head",
+        "body": "halo.cloud_message.start(topic_head",
+        "description": [
+        ]
+    },
+    "halo.cloud_message.get_info(msg)":{
+        "prefix": "halo.cloud_message.get_info(msg)",
+        "body": "halo.cloud_message.get_info(msg)",
+        "description": [
+        ]
+    },
+    "halo.cloud_message.broadcast(message, value = '')":{
+        "prefix": "halo.cloud_message.broadcast(message, value = '')",
+        "body": "halo.cloud_message.broadcast(message, value = '')",
+        "description": [
+        ]
+    },
+    "halo.led.show_single(led_id, r, g, b, percentage = 100)":{
+        "prefix": "halo.led.show_single(led_id, r, g, b, percentage = 100)",
+        "body": "halo.led.show_single(led_id, r, g, b, percentage = 100)",
+        "description": [
+        ]
+    },
+    "halo.led.show_all(r_color, g = 0, b = 0, percentage = 100)":{
+        "prefix": "halo.led.show_all(r_color, g = 0, b = 0, percentage = 100)",
+        "body": "halo.led.show_all(r_color, g = 0, b = 0, percentage = 100)",
+        "description": [
+        ]
+    },
+    "halo.led.off_single(led_id)":{
+        "prefix": "halo.led.off_single(led_id)",
+        "body": "halo.led.off_single(led_id)",
+        "description": [
+        ]
+    },
+    "halo.led.off_all()":{
+        "prefix": "halo.led.off_all()",
+        "body": "halo.led.off_all()",
+        "description": [
+        ]
+    },
+    "halo.led.clear()":{
+        "prefix": "halo.led.clear()",
+        "body": "halo.led.clear()",
+        "description": [
+        ]
+    },
+    "halo.led.show_ring(color_str, offset = 0)":{
+        "prefix": "halo.led.show_ring(color_str, offset = 0)",
+        "body": "halo.led.show_ring(color_str, offset = 0)",
+        "description": [
+        ]
+    },
+    "halo.led.ring_graph(percentage)":{
+        "prefix": "halo.led.ring_graph(percentage)",
+        "body": "halo.led.ring_graph(percentage)",
+        "description": [
+        ]
+    },
+    "halo.led.show_animation(name_string)":{
+        "prefix": "halo.led.show_animation(name_string)",
+        "body": "halo.led.show_animation(name_string)",
+        "description": [
+            "spoondrift/meteor/rainbow/firefly/flash_red/flash_orange/right "
+        ]
+    },
+    "halo.led.show_full_color(data, offset = 0)":{
+        "prefix": "halo.led.show_full_color(data, offset = 0)",
+        "body": "halo.led.show_full_color(data, offset = 0)",
+        "description": [
+        ]
+    },
+    "halo.mesh.start_group(group_name)":{
+        "prefix": "halo.mesh.start_group(group_name)",
+        "body": "halo.mesh.start_group(group_name)",
+        "description": [
+        ]
+    },
+    "halo.mesh.join_group(group_name)":{
+        "prefix": "halo.mesh.join_group(group_name)",
+        "body": "halo.mesh.join_group(group_name)",
+        "description": [
+        ]
+    },
+    "halo.mesh.get_info(msg)":{
+        "prefix": "halo.mesh.get_info(msg)",
+        "body": "halo.mesh.get_info(msg)",
+        "description": [
+        ]
+    },
+    "halo.mesh.broadcast(message, value = '')":{
+        "prefix": "halo.mesh.broadcast(message, value = '')",
+        "body": "halo.mesh.broadcast(message, value = '')",
+        "description": [
+        ]
+    },
+    "halo.microphone.get_loudness(type = 'average')":{
+        "prefix": "halo.microphone.get_loudness(type = 'average')",
+        "body": "halo.microphone.get_loudness(type = 'average')",
+        "description": [
+            "average/maximum "
+        ]
+    },
+    "halo.pin0.write_digital(value)":{
+        "prefix": "halo.pin0.write_digital(value)",
+        "body": "halo.pin0.write_digital(value)",
+        "description": [
+        ]
+    },
+    "halo.pin0.servo_write(value)":{
+        "prefix": "halo.pin0.servo_write(value)",
+        "body": "halo.pin0.servo_write(value)",
+        "description": [
+        ]
+    },
+    "halo.pin0.read_analog()":{
+        "prefix": "halo.pin0.read_analog()",
+        "body": "halo.pin0.read_analog()",
+        "description": [
+        ]
+    },
+    "halo.pin0.write_analog(value)":{
+        "prefix": "halo.pin0.write_analog(value)",
+        "body": "halo.pin0.write_analog(value)",
+        "description": [
+        ]
+    },
+    "halo.pin0.is_touched()":{
+        "prefix": "halo.pin0.is_touched()",
+        "body": "halo.pin0.is_touched()",
+        "description": [
+        ]
+    },
+    "halo.pin0.set_touchpad_threshold(value)":{
+        "prefix": "halo.pin0.set_touchpad_threshold(value)",
+        "body": "halo.pin0.set_touchpad_threshold(value)",
+        "description": [
+            "value:0-1 "
+        ]
+    },
+    "halo.pin0.set_touchpad_sensitivity(level)":{
+        "prefix": "halo.pin0.set_touchpad_sensitivity(level)",
+        "body": "halo.pin0.set_touchpad_sensitivity(level)",
+        "description": [
+            "high/middle/low "
+        ]
+    },
+    "halo.pin0.get_touchpad_value()":{
+        "prefix": "halo.pin0.get_touchpad_value()",
+        "body": "halo.pin0.get_touchpad_value()",
+        "description": [
+        ]
+    },
+    "halo.pin0.set_pwm_frequency(frequency)":{
+        "prefix": "halo.pin0.set_pwm_frequency(frequency)",
+        "body": "halo.pin0.set_pwm_frequency(frequency)",
+        "description": [
+        ]
+    },
+    "halo.pin0.set_pwm_duty(duty)":{
+        "prefix": "halo.pin0.set_pwm_duty(duty)",
+        "body": "halo.pin0.set_pwm_duty(duty)",
+        "description": [
+        ]
+    },
+    "halo.pin0.play_note(note, beat = None)":{
+        "prefix": "halo.pin0.play_note(note, beat = None)",
+        "body": "halo.pin0.play_note(note, beat = None)",
+        "description": [
+        ]
+    },
+    "halo.pin0.play_tone(frequency, time_s = None)":{
+        "prefix": "halo.pin0.play_tone(frequency, time_s = None)",
+        "body": "halo.pin0.play_tone(frequency, time_s = None)",
+        "description": [
+        ]
+    },
+    "halo.pin1.write_digital(value)":{
+        "prefix": "halo.pin1.write_digital(value)",
+        "body": "halo.pin1.write_digital(value)",
+        "description": [
+        ]
+    },
+    "halo.pin1.servo_write(value)":{
+        "prefix": "halo.pin1.servo_write(value)",
+        "body": "halo.pin1.servo_write(value)",
+        "description": [
+        ]
+    },
+    "halo.pin1.read_analog()":{
+        "prefix": "halo.pin1.read_analog()",
+        "body": "halo.pin1.read_analog()",
+        "description": [
+        ]
+    },
+    "halo.pin1.write_analog(value)":{
+        "prefix": "halo.pin1.write_analog(value)",
+        "body": "halo.pin1.write_analog(value)",
+        "description": [
+        ]
+    },
+    "halo.pin1.is_touched()":{
+        "prefix": "halo.pin1.is_touched()",
+        "body": "halo.pin1.is_touched()",
+        "description": [
+        ]
+    },
+    "halo.pin1.set_touchpad_threshold(value)":{
+        "prefix": "halo.pin1.set_touchpad_threshold(value)",
+        "body": "halo.pin1.set_touchpad_threshold(value)",
+        "description": [
+            "value:0-1 "
+        ]
+    },
+    "halo.pin1.set_touchpad_sensitivity(level)":{
+        "prefix": "halo.pin1.set_touchpad_sensitivity(level)",
+        "body": "halo.pin1.set_touchpad_sensitivity(level)",
+        "description": [
+            "high/middle/low "
+        ]
+    },
+    "halo.pin1.get_touchpad_value()":{
+        "prefix": "halo.pin1.get_touchpad_value()",
+        "body": "halo.pin1.get_touchpad_value()",
+        "description": [
+        ]
+    },
+    "halo.pin1.set_pwm_frequency(frequency)":{
+        "prefix": "halo.pin1.set_pwm_frequency(frequency)",
+        "body": "halo.pin1.set_pwm_frequency(frequency)",
+        "description": [
+        ]
+    },
+    "halo.pin1.set_pwm_duty(duty)":{
+        "prefix": "halo.pin1.set_pwm_duty(duty)",
+        "body": "halo.pin1.set_pwm_duty(duty)",
+        "description": [
+        ]
+    },
+    "halo.pin1.play_note(note, beat = None)":{
+        "prefix": "halo.pin1.play_note(note, beat = None)",
+        "body": "halo.pin1.play_note(note, beat = None)",
+        "description": [
+        ]
+    },
+    "halo.pin1.play_tone(frequency, time_s = None)":{
+        "prefix": "halo.pin1.play_tone(frequency, time_s = None)",
+        "body": "halo.pin1.play_tone(frequency, time_s = None)",
+        "description": [
+        ]
+    },
+    "halo.pin2.write_digital(value)":{
+        "prefix": "halo.pin2.write_digital(value)",
+        "body": "halo.pin2.write_digital(value)",
+        "description": [
+        ]
+    },
+    "halo.pin2.servo_write(value)":{
+        "prefix": "halo.pin2.servo_write(value)",
+        "body": "halo.pin2.servo_write(value)",
+        "description": [
+        ]
+    },
+    "halo.pin2.read_analog()":{
+        "prefix": "halo.pin2.read_analog()",
+        "body": "halo.pin2.read_analog()",
+        "description": [
+        ]
+    },
+    "halo.pin2.write_analog(value)":{
+        "prefix": "halo.pin2.write_analog(value)",
+        "body": "halo.pin2.write_analog(value)",
+        "description": [
+        ]
+    },
+    "halo.pin2.is_touched()":{
+        "prefix": "halo.pin2.is_touched()",
+        "body": "halo.pin2.is_touched()",
+        "description": [
+        ]
+    },
+    "halo.pin2.set_touchpad_threshold(value)":{
+        "prefix": "halo.pin2.set_touchpad_threshold(value)",
+        "body": "halo.pin2.set_touchpad_threshold(value)",
+        "description": [
+            "value:0-1 "
+        ]
+    },
+    "halo.pin2.set_touchpad_sensitivity(level)":{
+        "prefix": "halo.pin2.set_touchpad_sensitivity(level)",
+        "body": "halo.pin2.set_touchpad_sensitivity(level)",
+        "description": [
+            "high/middle/low "
+        ]
+    },
+    "halo.pin2.get_touchpad_value()":{
+        "prefix": "halo.pin2.get_touchpad_value()",
+        "body": "halo.pin2.get_touchpad_value()",
+        "description": [
+        ]
+    },
+    "halo.pin2.set_pwm_frequency(frequency)":{
+        "prefix": "halo.pin2.set_pwm_frequency(frequency)",
+        "body": "halo.pin2.set_pwm_frequency(frequency)",
+        "description": [
+        ]
+    },
+    "halo.pin2.set_pwm_duty(duty)":{
+        "prefix": "halo.pin2.set_pwm_duty(duty)",
+        "body": "halo.pin2.set_pwm_duty(duty)",
+        "description": [
+        ]
+    },
+    "halo.pin2.play_note(note, beat = None)":{
+        "prefix": "halo.pin2.play_note(note, beat = None)",
+        "body": "halo.pin2.play_note(note, beat = None)",
+        "description": [
+        ]
+    },
+    "halo.pin2.play_tone(frequency, time_s = None)":{
+        "prefix": "halo.pin2.play_tone(frequency, time_s = None)",
+        "body": "halo.pin2.play_tone(frequency, time_s = None)",
+        "description": [
+        ]
+    },
+    "halo.pin3.write_digital(value)":{
+        "prefix": "halo.pin3.write_digital(value)",
+        "body": "halo.pin3.write_digital(value)",
+        "description": [
+        ]
+    },
+    "halo.pin3.servo_write(value)":{
+        "prefix": "halo.pin3.servo_write(value)",
+        "body": "halo.pin3.servo_write(value)",
+        "description": [
+        ]
+    },
+    "halo.pin3.read_analog()":{
+        "prefix": "halo.pin3.read_analog()",
+        "body": "halo.pin3.read_analog()",
+        "description": [
+        ]
+    },
+    "halo.pin3.write_analog(value)":{
+        "prefix": "halo.pin3.write_analog(value)",
+        "body": "halo.pin3.write_analog(value)",
+        "description": [
+        ]
+    },
+    "halo.pin3.is_touched()":{
+        "prefix": "halo.pin3.is_touched()",
+        "body": "halo.pin3.is_touched()",
+        "description": [
+        ]
+    },
+    "halo.pin3.set_touchpad_threshold(value)":{
+        "prefix": "halo.pin3.set_touchpad_threshold(value)",
+        "body": "halo.pin3.set_touchpad_threshold(value)",
+        "description": [
+            "value:0-1 "
+        ]
+    },
+    "halo.pin3.set_touchpad_sensitivity(level)":{
+        "prefix": "halo.pin3.set_touchpad_sensitivity(level)",
+        "body": "halo.pin3.set_touchpad_sensitivity(level)",
+        "description": [
+            "high/middle/low "
+        ]
+    },
+    "halo.pin3.get_touchpad_value()":{
+        "prefix": "halo.pin3.get_touchpad_value()",
+        "body": "halo.pin3.get_touchpad_value()",
+        "description": [
+        ]
+    },
+    "halo.pin3.set_pwm_frequency(frequency)":{
+        "prefix": "halo.pin3.set_pwm_frequency(frequency)",
+        "body": "halo.pin3.set_pwm_frequency(frequency)",
+        "description": [
+        ]
+    },
+    "halo.pin3.set_pwm_duty(duty)":{
+        "prefix": "halo.pin3.set_pwm_duty(duty)",
+        "body": "halo.pin3.set_pwm_duty(duty)",
+        "description": [
+        ]
+    },
+    "halo.pin3.play_note(note, beat = None)":{
+        "prefix": "halo.pin3.play_note(note, beat = None)",
+        "body": "halo.pin3.play_note(note, beat = None)",
+        "description": [
+        ]
+    },
+    "halo.pin3.play_tone(frequency, time_s = None)":{
+        "prefix": "halo.pin3.play_tone(frequency, time_s = None)",
+        "body": "halo.pin3.play_tone(frequency, time_s = None)",
+        "description": [
+        ]
+    },
+    "halo.speech_recognition.start(server = halo.speech_recognition.SERVER_MICROSOFT, language = halo.speech_recognition.LAN_CHINESE, time_s = 5, wait_flag = True)":{
+        "prefix": "halo.speech_recognition.start(server = halo.speech_recognition.SERVER_MICROSOFT, language = halo.speech_recognition.LAN_CHINESE, time_s = 5, wait_flag = True)",
+        "body": "halo.speech_recognition.start(server = halo.speech_recognition.SERVER_MICROSOFT, language = halo.speech_recognition.LAN_CHINESE, time_s = 5, wait_flag = True)",
+        "description": [
+        ]
+    },
+    "halo.speech_recognition.begin(time_s = 3,  language = 'mandarin')":{
+        "prefix": "halo.speech_recognition.begin(time_s = 3,  language = 'mandarin')",
+        "body": "halo.speech_recognition.begin(time_s = 3,  language = 'mandarin')",
+        "description": [
+            "lan:'mandarin'/'cantonese'/'mandarin_taiwan'/'english'/'French'/'German'/'italian'/'spanish' "
+        ]
+    },
+    "halo.speech_recognition.set_token(server = halo.speech_recognition.SERVER_MICROSOFT, token)":{
+        "prefix": "halo.speech_recognition.set_token(server = halo.speech_recognition.SERVER_MICROSOFT, token)",
+        "body": "halo.speech_recognition.set_token(server = halo.speech_recognition.SERVER_MICROSOFT, token)",
+        "description": [
+        ]
+    },
+    "halo.speech_recognition.set_access_token(token)":{
+        "prefix": "halo.speech_recognition.set_access_token(token)",
+        "body": "halo.speech_recognition.set_access_token(token)",
+        "description": [
+        ]
+    },
+    "halo.speech_recognition.set_token_url(server, url)":{
+        "prefix": "halo.speech_recognition.set_token_url(server, url)",
+        "body": "halo.speech_recognition.set_token_url(server, url)",
+        "description": [
+        ]
+    },
+    "halo.speech_recognition.set_recognition_address(url)":{
+        "prefix": "halo.speech_recognition.set_recognition_address(url)",
+        "body": "halo.speech_recognition.set_recognition_address(url)",
+        "description": [
+        ]
+    },
+    "halo.speech_recognition.get_result_code()":{
+        "prefix": "halo.speech_recognition.get_result_code()",
+        "body": "halo.speech_recognition.get_result_code()",
+        "description": [
+        ]
+    },
+    "halo.touchpad0.is_touched()":{
+        "prefix": "halo.touchpad0.is_touched()",
+        "body": "halo.touchpad0.is_touched()",
+        "description": [
+        ]
+    },
+    "halo.touchpad0.set_touch_threshold(value)":{
+        "prefix": "halo.touchpad0.set_touch_threshold(value)",
+        "body": "halo.touchpad0.set_touch_threshold(value)",
+        "description": [
+            "value:0-1 "
+        ]
+    },
+    "halo.touchpad0.set_touch_sensitivity(level)":{
+        "prefix": "halo.touchpad0.set_touch_sensitivity(level)",
+        "body": "halo.touchpad0.set_touch_sensitivity(level)",
+        "description": [
+            "high/middle/low "
+        ]
+    },
+    "halo.touchpad0.get_value()":{
+        "prefix": "halo.touchpad0.get_value()",
+        "body": "halo.touchpad0.get_value()",
+        "description": [
+        ]
+    },
+    "halo.touchpad1.is_touched()":{
+        "prefix": "halo.touchpad1.is_touched()",
+        "body": "halo.touchpad1.is_touched()",
+        "description": [
+        ]
+    },
+    "halo.touchpad1.set_touch_threshold(value)":{
+        "prefix": "halo.touchpad1.set_touch_threshold(value)",
+        "body": "halo.touchpad1.set_touch_threshold(value)",
+        "description": [
+            "value:0-1 "
+        ]
+    },
+    "halo.touchpad1.set_touch_sensitivity(level)":{
+        "prefix": "halo.touchpad1.set_touch_sensitivity(level)",
+        "body": "halo.touchpad1.set_touch_sensitivity(level)",
+        "description": [
+            "high/middle/low "
+        ]
+    },
+    "halo.touchpad1.get_value()":{
+        "prefix": "halo.touchpad1.get_value()",
+        "body": "halo.touchpad1.get_value()",
+        "description": [
+        ]
+    },
+    "halo.touchpad2.is_touched()":{
+        "prefix": "halo.touchpad2.is_touched()",
+        "body": "halo.touchpad2.is_touched()",
+        "description": [
+        ]
+    },
+    "halo.touchpad2.set_touch_threshold(value)":{
+        "prefix": "halo.touchpad2.set_touch_threshold(value)",
+        "body": "halo.touchpad2.set_touch_threshold(value)",
+        "description": [
+            "value:0-1 "
+        ]
+    },
+    "halo.touchpad2.set_touch_sensitivity(level)":{
+        "prefix": "halo.touchpad2.set_touch_sensitivity(level)",
+        "body": "halo.touchpad2.set_touch_sensitivity(level)",
+        "description": [
+            "high/middle/low "
+        ]
+    },
+    "halo.touchpad2.get_value()":{
+        "prefix": "halo.touchpad2.get_value()",
+        "body": "halo.touchpad2.get_value()",
+        "description": [
+        ]
+    },
+    "halo.touchpad3.is_touched()":{
+        "prefix": "halo.touchpad3.is_touched()",
+        "body": "halo.touchpad3.is_touched()",
+        "description": [
+        ]
+    },
+    "halo.touchpad3.set_touch_threshold(value)":{
+        "prefix": "halo.touchpad3.set_touch_threshold(value)",
+        "body": "halo.touchpad3.set_touch_threshold(value)",
+        "description": [
+            "value:0-1 "
+        ]
+    },
+    "halo.touchpad3.set_touch_sensitivity(level)":{
+        "prefix": "halo.touchpad3.set_touch_sensitivity(level)",
+        "body": "halo.touchpad3.set_touch_sensitivity(level)",
+        "description": [
+            "high/middle/low "
+        ]
+    },
+    "halo.touchpad3.get_value()":{
+        "prefix": "halo.touchpad3.get_value()",
+        "body": "halo.touchpad3.get_value()",
+        "description": [
+        ]
+    },
+    "halo.upload_mode_message.get_info(msg)":{
+        "prefix": "halo.upload_mode_message.get_info(msg)",
+        "body": "halo.upload_mode_message.get_info(msg)",
+        "description": [
+        ]
+    },
+    "halo.upload_mode_message.broadcast(message, value = '')":{
+        "prefix": "halo.upload_mode_message.broadcast(message, value = '')",
+        "body": "halo.upload_mode_message.broadcast(message, value = '')",
+        "description": [
+        ]
+    },
+    "halo.wifi.is_connected()":{
+        "prefix": "halo.wifi.is_connected()",
+        "body": "halo.wifi.is_connected()",
+        "description": [
+        ]
+    },
+    "halo.wifi.start(ssid, password)":{
+        "prefix": "halo.wifi.start(ssid, password)",
+        "body": "halo.wifi.start(ssid, password)",
+        "description": [
+            "Start as STA mode "
+        ]
+    },
+    "halo.speaker.volume":{
+        "prefix": "halo.speaker.volume",
+        "body": "halo.speaker.volume",
+        "description": [
+        ]
+    },
+    "halo.speaker.tempo":{
+        "prefix": "halo.speaker.tempo",
+        "body": "halo.speaker.tempo",
+        "description": [
+        ]
+    },
+    "halo.speaker.stop_sounds()":{
+        "prefix": "halo.speaker.stop_sounds()",
+        "body": "halo.speaker.stop_sounds()",
+        "description": [
+        ]
+    },
+    "halo.speaker.play_melody_until_done(file_name)":{
+        "prefix": "halo.speaker.play_melody_until_done(file_name)",
+        "body": "halo.speaker.play_melody_until_done(file_name)",
+        "description": [
+        ]
+    },
+    "halo.speaker.play_melody(file_name)":{
+        "prefix": "halo.speaker.play_melody(file_name)",
+        "body": "halo.speaker.play_melody(file_name)",
+        "description": [
+        ]
+    },
+    "halo.speaker.play_tone(frequency, time_s = None)":{
+        "prefix": "halo.speaker.play_tone(frequency, time_s = None)",
+        "body": "halo.speaker.play_tone(frequency, time_s = None)",
+        "description": [
+        ]
+    },
+    "halo.speaker.play_note(note, beat = None)":{
+        "prefix": "halo.speaker.play_note(note, beat = None)",
+        "body": "halo.speaker.play_note(note, beat = None)",
+        "description": [
+        ]
+    },
+    "halo.speaker.rest(beat)":{
+        "prefix": "halo.speaker.rest(beat)",
+        "body": "halo.speaker.rest(beat)",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.get_roll()":{
+        "prefix": "halo.motion_sensor.get_roll()",
+        "body": "halo.motion_sensor.get_roll()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.get_pitch()":{
+        "prefix": "halo.motion_sensor.get_pitch()",
+        "body": "halo.motion_sensor.get_pitch()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.get_yaw()":{
+        "prefix": "halo.motion_sensor.get_yaw()",
+        "body": "halo.motion_sensor.get_yaw()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.get_acceleration(axis)":{
+        "prefix": "halo.motion_sensor.get_acceleration(axis)",
+        "body": "halo.motion_sensor.get_acceleration(axis)",
+        "description": [
+            "x/y/z "
+        ]
+    },
+    "halo.motion_sensor.get_gyroscope(axis)":{
+        "prefix": "halo.motion_sensor.get_gyroscope(axis)",
+        "body": "halo.motion_sensor.get_gyroscope(axis)",
+        "description": [
+            "x/y/z "
+        ]
+    },
+    "halo.motion_sensor.get_rotation(axis)":{
+        "prefix": "halo.motion_sensor.get_rotation(axis)",
+        "body": "halo.motion_sensor.get_rotation(axis)",
+        "description": [
+            "x/y/z "
+        ]
+    },
+    "halo.motion_sensor.reset_rotation(axis = 'all')":{
+        "prefix": "halo.motion_sensor.reset_rotation(axis = 'all')",
+        "body": "halo.motion_sensor.reset_rotation(axis = 'all')",
+        "description": [
+            "x/y/z/all "
+        ]
+    },
+    "halo.motion_sensor.is_tilted_left()":{
+        "prefix": "halo.motion_sensor.is_tilted_left()",
+        "body": "halo.motion_sensor.is_tilted_left()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.is_tilted_right()":{
+        "prefix": "halo.motion_sensor.is_tilted_right()",
+        "body": "halo.motion_sensor.is_tilted_right()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.is_arrow_up()":{
+        "prefix": "halo.motion_sensor.is_arrow_up()",
+        "body": "halo.motion_sensor.is_arrow_up()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.is_arrow_down()":{
+        "prefix": "halo.motion_sensor.is_arrow_down()",
+        "body": "halo.motion_sensor.is_arrow_down()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.is_shaked()":{
+        "prefix": "halo.motion_sensor.is_shaked()",
+        "body": "halo.motion_sensor.is_shaked()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.get_shake_strength()":{
+        "prefix": "halo.motion_sensor.get_shake_strength()",
+        "body": "halo.motion_sensor.get_shake_strength()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.is_led_ring_up()":{
+        "prefix": "halo.motion_sensor.is_led_ring_up()",
+        "body": "halo.motion_sensor.is_led_ring_up()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.is_led_ring_down()":{
+        "prefix": "halo.motion_sensor.is_led_ring_down()",
+        "body": "halo.motion_sensor.is_led_ring_down()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.is_free_fall()":{
+        "prefix": "halo.motion_sensor.is_free_fall()",
+        "body": "halo.motion_sensor.is_free_fall()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.is_rotate_clockwise()":{
+        "prefix": "halo.motion_sensor.is_rotate_clockwise()",
+        "body": "halo.motion_sensor.is_rotate_clockwise()",
+        "description": [
+        ]
+    },
+    "halo.motion_sensor.is_rotate_anticlockwise()":{
+        "prefix": "halo.motion_sensor.is_rotate_anticlockwise()",
+        "body": "halo.motion_sensor.is_rotate_anticlockwise()",
+        "description": [
+        ]
+    },
+    "@event.button_pressed":{
+        "prefix": "@event.button_pressed",
+        "body": "@event.button_pressed",
+        "description": [
+        ]
+    },
+    "@event.shaked":{
+        "prefix": "@event.shaked",
+        "body": "@event.shaked",
+        "description": [
+        ]
+    },
+    "@event.tilted_left":{
+        "prefix": "@event.tilted_left",
+        "body": "@event.tilted_left",
+        "description": [
+        ]
+    },
+    "@event.tilted_right":{
+        "prefix": "@event.tilted_right",
+        "body": "@event.tilted_right",
+        "description": [
+        ]
+    },
+    "@event.arrow_up":{
+        "prefix": "@event.arrow_up",
+        "body": "@event.arrow_up",
+        "description": [
+        ]
+    },
+    "@event.arrow_down":{
+        "prefix": "@event.arrow_down",
+        "body": "@event.arrow_down",
+        "description": [
+        ]
+    },
+    "@event.free_fall":{
+        "prefix": "@event.free_fall",
+        "body": "@event.free_fall",
+        "description": [
+        ]
+    },
+    "@event.rotate_clockwise":{
+        "prefix": "@event.rotate_clockwise",
+        "body": "@event.rotate_clockwise",
+        "description": [
+        ]
+    },
+    "@event.rotate_anticlockwise":{
+        "prefix": "@event.rotate_anticlockwise",
+        "body": "@event.rotate_anticlockwise",
+        "description": [
+        ]
+    },
+    "@event.received(message_str)":{
+        "prefix": "@event.received(message_str)",
+        "body": "@event.received(message_str)",
+        "description": [
+        ]
+    },
+    "@event.cloud_message(message)":{
+        "prefix": "@event.cloud_message(message)",
+        "body": "@event.cloud_message(message)",
+        "description": [
+        ]
+    },
+    "@event.mesh_message(message)":{
+        "prefix": "@event.mesh_message(message)",
+        "body": "@event.mesh_message(message)",
+        "description": [
+        ]
+    },
+    "@event.upload_mode__message(message)":{
+        "prefix": "@event.upload_mode__message(message)",
+        "body": "@event.upload_mode__message(message)",
+        "description": [
+        ]
+    },
+    "@event.received(message_str)":{
+        "prefix": "@event.received(message_str)",
+        "body": "@event.received(message_str)",
+        "description": [
+        ]
+    },
+    "@event.greater_than(threshold, type_str)":{
+        "prefix": "@event.greater_than(threshold, type_str)",
+        "body": "@event.greater_than(threshold, type_str)",
+        "description": [
+        ]
+    },
+    "@event.touchpad0_active":{
+        "prefix": "@event.touchpad0_active",
+        "body": "@event.touchpad0_active",
+        "description": [
+        ]
+    },
+    "math.sqrt(x)":{
+        "prefix": "math.sqrt(x)",
+        "body": "math.sqrt(x)",
+        "description": [
+            "Return the square root of 'x'. "
+        ]
+    },
+    "math.pow(x, y)":{
+        "prefix": "math.pow(x, y)",
+        "body": "math.pow(x, y)",
+        "description": [
+            "Return 'x' raised to the power 'y'. "
+        ]
+    },
+    "math.exp(x)":{
+        "prefix": "math.exp(x)",
+        "body": "math.exp(x)",
+        "description": [
+            "Return math.e**'x'. "
+        ]
+    },
+    "math.log(x, base=math.e)":{
+        "prefix": "math.log(x, base=math.e)",
+        "body": "math.log(x, base=math.e)",
+        "description": [
+            "With one argument, return the natural logarithm of 'x' (to base e).\nWith two arguments, return the logarithm of 'x' to the given 'base'. "
+        ]
+    },
+    "math.cos(x)":{
+        "prefix": "math.cos(x)",
+        "body": "math.cos(x)",
+        "description": [
+            "Return the cosine of 'x' radians. "
+        ]
+    },
+    "math.sin(x)":{
+        "prefix": "math.sin(x)",
+        "body": "math.sin(x)",
+        "description": [
+            "Return the sine of 'x' radians. "
+        ]
+    },
+    "math.tan(x)":{
+        "prefix": "math.tan(x)",
+        "body": "math.tan(x)",
+        "description": [
+            "Return the tangent of 'x' radians. "
+        ]
+    },
+    "math.acos(x)":{
+        "prefix": "math.acos(x)",
+        "body": "math.acos(x)",
+        "description": [
+            "Return the arc cosine of 'x', in radians. "
+        ]
+    },
+    "math.asin(x)":{
+        "prefix": "math.asin(x)",
+        "body": "math.asin(x)",
+        "description": [
+            "Return the arc sine of 'x', in radians. "
+        ]
+    },
+    "math.atan(x)":{
+        "prefix": "math.atan(x)",
+        "body": "math.atan(x)",
+        "description": [
+            "Return the arc tangent of 'x', in radians. "
+        ]
+    },
+    "math.atan2(x, y)":{
+        "prefix": "math.atan2(x, y)",
+        "body": "math.atan2(x, y)",
+        "description": [
+            "Return atan(y / x), in radians. "
+        ]
+    },
+    "math.ceil(x)":{
+        "prefix": "math.ceil(x)",
+        "body": "math.ceil(x)",
+        "description": [
+            "Return the ceiling of 'x', the smallest integer greater than or equal to 'x'. "
+        ]
+    },
+    "math.copysign(x, y)":{
+        "prefix": "math.copysign(x, y)",
+        "body": "math.copysign(x, y)",
+        "description": [
+            "Return a float with the magnitude (absolute value) of 'x' but the sign of 'y'. "
+        ]
+    },
+    "math.fabs(x)":{
+        "prefix": "math.fabs(x)",
+        "body": "math.fabs(x)",
+        "description": [
+            "Return the absolute value of 'x'. "
+        ]
+    },
+    "math.floor(x)":{
+        "prefix": "math.floor(x)",
+        "body": "math.floor(x)",
+        "description": [
+            "Return the floor of 'x', the largest integer less than or equal to 'x'. "
+        ]
+    },
+    "math.fmod(x, y)":{
+        "prefix": "math.fmod(x, y)",
+        "body": "math.fmod(x, y)",
+        "description": [
+            "Return 'x' modulo 'y'. "
+        ]
+    },
+    "math.frexp(x)":{
+        "prefix": "math.frexp(x)",
+        "body": "math.frexp(x)",
+        "description": [
+            "Return the mantissa and exponent of 'x' as the pair (m, e). "
+        ]
+    },
+    "math.ldexp(x, i)":{
+        "prefix": "math.ldexp(x, i)",
+        "body": "math.ldexp(x, i)",
+        "description": [
+            "Return 'x' * (2**'i'). "
+        ]
+    },
+    "math.modf(x)":{
+        "prefix": "math.modf(x)",
+        "body": "math.modf(x)",
+        "description": [
+            "Return the fractional and integer parts of x.\nBoth results carry the sign of x and are floats. "
+        ]
+    },
+    "math.isfinite(x)":{
+        "prefix": "math.isfinite(x)",
+        "body": "math.isfinite(x)",
+        "description": [
+            "Return True if 'x' is neither an infinity nor a NaN, and False otherwise. "
+        ]
+    },
+    "math.isinf(x)":{
+        "prefix": "math.isinf(x)",
+        "body": "math.isinf(x)",
+        "description": [
+            "Return True if 'x' is a positive or negative infinity, and False otherwise. "
+        ]
+    },
+    "math.isnan(x)":{
+        "prefix": "math.isnan(x)",
+        "body": "math.isnan(x)",
+        "description": [
+            "Return True if 'x' is a NaN (not a number), and False otherwise. "
+        ]
+    },
+    "math.trunc(x)":{
+        "prefix": "math.trunc(x)",
+        "body": "math.trunc(x)",
+        "description": [
+            "Return the Real value 'x' truncated to an Integral (usually an integer). "
+        ]
+    },
+    "math.radians(x)":{
+        "prefix": "math.radians(x)",
+        "body": "math.radians(x)",
+        "description": [
+            "Convert angle 'x' from degrees to radians. "
+        ]
+    },
+    "math.degrees(x)":{
+        "prefix": "math.degrees(x)",
+        "body": "math.degrees(x)",
+        "description": [
+            "Convert angle 'x' from radians to degrees. "
+        ]
+    },
+}

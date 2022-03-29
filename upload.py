@@ -19,6 +19,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
+
+
 import time
 import signal
 import sys
@@ -266,8 +268,8 @@ class halocode_communication():
             if self.file_content.get_current_percentage() < 100:
                 self.send_file_content()
             else:
-                global running
-                running = False
+                global uploading
+                uploading = False
                 self.show_status_message("Complete file transfer!")
                 self.process_status = 0
 
@@ -293,46 +295,58 @@ def file_read(path):
     file.close()
     return data
 
+def init_upload(path, ser):
+    target_path = '/flash/main.py'
+    script = file_read(path).encode('utf-8')
+    print(f'uploading {path} to {target_path}')
 
-def upload_file(path):
+    comm = halocode_communication()
+    comm.update_paras(ser, script, target_path)
+    comm.send_file_content()
+    return comm
+
+
+def upload_and_log(path = ''):
     """
     Upload Code to Makeblock Devices
     """
-    target_path = '/flash/main.py'
 
-    comm = halocode_communication()
-    data = file_read(path)
+    global uploading
+    uploading = path != ''
+
     port = find_port()
 
     if port == None:
         print('Could not find an attached Makeblock Device')
         print('Please attach your Makeblock device (Codey Rocky or HaloCode) with USB Cable')
-        
-    else:
-        print(f'uploading {path} to {port} as {target_path}')
-        print('press Ctrl+C to cancel')
 
+    else:
+        print(f'Connecting to {port}')
         ser = serial.Serial(port, 115200, dsrdtr=use_dsrdtr)
-        script = data.encode('utf-8')
-            
-        comm.update_paras(ser, script, target_path)
-        comm.send_file_content()
+
+        if uploading:
+            comm = init_upload(path, ser)
+
+        print('press Ctrl+C to cancel')
 
         global running
         while running:
             if ser.in_waiting > 0 and ser.out_waiting == 0:
                 if debug: print('input received')
-                comm.ftp_process.push_chars(ser.read_all())
+                
+                bytes = ser.read_all()
+                if uploading: comm.ftp_process.push_chars(bytes)
+                try:
+                    sys.stdout.write(bytes.decode())
+                except:
+                    pass
 
             time.sleep(0.25)
 
 
-def show_message(m, info):
-    print(m)
-    print(info)
-
-
 running = True
+uploading = False
+
 
 def signal_handler(signal, frame):
     global running
@@ -341,8 +355,10 @@ def signal_handler(signal, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
+
 if len(sys.argv) < 2:
-    print('missing parameter: file name')
+    print('No file specified. Connecting to log console')
+    upload_and_log()
 
 else:
-    upload_file(sys.argv[1])
+    upload_and_log(sys.argv[1])
