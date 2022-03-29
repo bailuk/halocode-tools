@@ -26,20 +26,12 @@ def on_start():
     led = 0
 
     while True:
-        for index in range(0, 12):
-            if index == led:
-                p = 50
-            else:
-                p = 5
 
-            show_led(index, colors[index], p)
-
+        show_led(led, colors[led], 5)
         led = inc(led, 12)
+        show_led(led, colors[led], 50)
+
         time.sleep(0.5)
-
-
-
-    print(hexToColor('f7f302'))
 
 
 def inc(led, limit):
@@ -61,3 +53,8 @@ def hexToColor(color):
     b = '' + color[start + 4] + color[start + 5]
 
     return [int(r, 16), int(g, 16), int(b, 16)]
+
+
+@event.button_pressed
+def on_pressed():
+    halo.led.off_all()
