@@ -17,8 +17,7 @@ def on_start():
         time.sleep(1)
 
     halo.led.show_single(1, 0, 255, 0, 10)
-    
-    # cloud_message.start(topi_head, client_id=None, server="mq.makeblock.com", port=1883, user=None, password=None, keepalive=60, ssl=False)
+# cloud_message.start(topi_head, client_id=None, server="mq.makeblock.com", port=1883, user=None, password=None, keepalive=60, ssl=False)
     time.sleep(10)
     halo.cloud_message.start(topic_head = 'test', server = '192.168.1.1', ssl=False)
     halo.led.show_single(1, 0, 0, 255, 10)
@@ -39,6 +38,6 @@ def on_pressed():
 
 
 
-# @event.cloud_message('test')
-# def received_message(message):
-#    print(message)
+@event.cloud_message('test')
+def received_message(message):
+    print(message)

@@ -45,7 +45,7 @@ apt install mosquitto
 # edit /etc/mosquitto/mosquitto.conf:
 ---------------------
 allow_anonymous true
-listener 1883
+listener 1883 0.0.0.0
 ---------------------
 
 # start server

@@ -8,6 +8,7 @@ import time
 
 @event.start
 def on_start():
+
     colors = [
         hexToColor('00ff00'),  # 1
         hexToColor('00ff00'),  # 2
@@ -25,14 +26,53 @@ def on_start():
 
     led = 0
 
+    s_id_old = 0
+    m_id_old = 0
+    h_id_old = 0
+
+
     while True:
 
-        show_led(led, colors[led], 5)
-        led = inc(led, 12)
-        show_led(led, colors[led], 50)
+        sec =  int(halo.get_timer())
+        min =  int(sec / 60)
+        hour = int(min / 60)
+
+        min = min - (hour * 60)
+        sec = sec - (min * 60)
+        
+        print('__')
+        print(hour)
+        print(min)
+        print(sec)
+        
+        s_id = int(sec  * 0.2)
+        m_id = int(min  * 0.2)
+        h_id = int(hour * 0.2)
+
+        led_off(s_id_old, s_id, m_id, h_id)
+        led_off(m_id_old, s_id, m_id, h_id)
+        led_off(h_id_old, s_id, m_id, h_id)
+
+        if (h_id != m_id and h_id != s_id): show_led(h_id, colors[11], 5)
+        if (m_id != s_id): show_led(m_id, colors[5],  5)
+        show_led(s_id, colors[0],  5)
+
+        s_id_old = s_id
+        m_id_old = m_id
+        h_id_old = h_id
 
         time.sleep(0.5)
 
+
+def led_off(id, a, b, c):
+    if id != a and id != b and id != c:
+        halo.led.off_single(toLedId(id))
+
+
+def toLedId(id):
+    if id == 0:
+        id = 12
+    return id
 
 def inc(led, limit):
     led = led + 1
@@ -40,8 +80,8 @@ def inc(led, limit):
         led = 0
     return led
 
-def show_led(index, color, percentage = 10):
-    halo.led.show_single(index + 1, color[0], color[1], color[2], percentage)
+def show_led(id, color, percentage = 10):
+    halo.led.show_single(toLedId(id), color[0], color[1], color[2], percentage)
 
 def hexToColor(color):
     start = 0

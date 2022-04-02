@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>halocode Plot</h1>
+
+    <h2>Acceleration sensor plot</h2>
+    <p>
+        <canvas id="myChart" style="width:100%;max-width:900px"></canvas>
+    </p>
+    <p>
+        <button onclick="updatePlot()">Update</button>
+    </p>
+
+    <h2>Message from device</h2>
+    <p>
+        <div id="message"></div>
+    </p>
+
+    <h2>Made with</h2>
+    <p>
+        <ul>
+            <li><a href="https://www.chartjs.org/docs/latest/">Chart.js</a></li>
+            <li><a href="https://www.w3schools.com/ai/ai_chartjs.asp">Chart.js (w3scools)</a></li>
+            <li><a href="https://nodejs.org/en/docs/">node.js</a></li>
+            <li><a href="https://expressjs.com/">Express web server and framework</a></li>
+            <li><a href="https://mosquitto.org/">Eclipse Mosquitto MQTT broker and client</a></li>
+        </ul>
+    </p>
+
+    <script>
+        const chart = new Chart("myChart", {
+            type: "line",
+
+            data: {
+                labels: [1,2],
+                datasets: [{
+                    label: 'x',
+                    data: [],
+                    borderColor: "red",
+                    fill: false
+                }, {
+                    label: 'y',
+                    data: [],
+                    borderColor: "green",
+                    fill: false
+                }, {
+                    label: 'z',
+                    data: [],
+                    borderColor: "blue",
+                    fill: false
+                }]
+            },
+            options: {
+                legend: {
+                    display: true
+                },
+                title: {
+                    display: true,
+                    text: "Accelerator"
+                }
+
+            }
+        });
+        
+
+        updatePlot = () => {
+            fetch('http://localhost:8080/api/')
+                .then(response => response.json())
+                .then(data => updateData(data));
+        }
+
+        updateData = (dto) => {
+            chart.data.labels = dto.data.map( (value) => value.time);
+            chart.data.datasets[0].data = dto.data.map( (value) => value.x);
+            chart.data.datasets[1].data = dto.data.map( (value) => value.y); 
+            chart.data.datasets[2].data = dto.data.map( (value) => value.z);
+            document.getElementById('message').innerHTML = dto.message;
+            chart.update();
+        }
+        setInterval(updatePlot,1000);
+    </script>
+</body>
+</html>
