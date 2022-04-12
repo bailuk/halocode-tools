@@ -336,10 +336,11 @@ def upload_and_log(path = ''):
                 
                 bytes = ser.read_all()
                 if uploading: comm.ftp_process.push_chars(bytes)
-                try:
-                    sys.stdout.write(bytes.decode())
-                except:
-                    pass
+                else:
+                    try:
+                        sys.stdout.write(bytes.decode())
+                    except:
+                        pass
 
             time.sleep(0.25)
 
