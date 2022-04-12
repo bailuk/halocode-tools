@@ -1,0 +1,9 @@
+{
+  "name": "halo-plotter",
+  "scripts": {
+    "start": "mosquitto_sub -t meteo | nodejs plot.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

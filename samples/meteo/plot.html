@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<style>
+    body { 
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .square {
+        display: inline-block; 
+        border-radius: 5px;
+        border-color: #019de8;
+        border-width: 3px;
+        border-style: solid;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .chart {
+        border-radius: 5px;
+        border-color: #99eb2f;
+        border-width: 3px;
+        border-style: solid;
+        padding: 5px;
+        margin: 10px;
+        width:100%; 
+        max-width:900px;
+    }
+
+    .square a {
+        color: gray;
+    }
+
+    .topic {
+        font-weight: bolder;
+    }
+</style>
+<body>
+    <div class = "square">
+        <div id="time" class = "topic">Wait for updates...</div>    
+        <div id="icon"></div>
+        <div id="temparature"></div>
+        <div id="humidity"></div>
+        <div id="light"></div>
+    </div>
+
+    <div class = "square">
+        <div class = "topic">Message from device</div>
+        <div id="message"></div>
+    </div>
+
+    <div class = "chart">
+        <canvas id="myChart"></canvas>
+    </div>
+        
+
+    <div class = "square">
+        <div class = "topic">Made with</div>
+        <div>
+        <ul>
+            <li><a href="https://www.chartjs.org/docs/latest/">Chart.js</a></li>
+            <li><a href="https://www.w3schools.com/ai/ai_chartjs.asp">Chart.js (w3scools)</a></li>
+            <li><a href="https://nodejs.org/en/docs/">node.js</a></li>
+            <li><a href="https://expressjs.com/">Express web server and framework</a></li>
+            <li><a href="https://mosquitto.org/">Eclipse Mosquitto MQTT broker and client</a></li>
+        </ul>
+        </div>
+    
+    </div>
+
+    <script>
+        const last = (list, run) => {
+            if (list.length > 0) {
+                run(list[list.length-1])
+            }
+        }
+
+        const chart = new Chart("myChart", {
+            type: "line",
+
+            data: {
+                labels: [1,2],
+                datasets: [{
+                    label: 'moisture',
+                    data: [],
+                    borderColor: "red",
+                    fill: false
+                }, {
+                    label: 'humidity',
+                    data: [],
+                    borderColor: "green",
+                    fill: false
+                }, {
+                    label: 'temparature',
+                    data: [],
+                    borderColor: "blue",
+                    fill: false
+                }, {
+                    label: 'light',
+                    data: [],
+                    borderColor: "yellow",
+                    fill: false
+                }]
+            },
+            options: {
+                legend: {
+                    display: true
+                },
+                title: {
+                    display: true,
+                    text: "Sensor data"
+                }
+            }
+        })
+
+        const isoToTime = (iso) => {
+            let result = iso.match(/\d\d:\d\d/);
+            return result[0];
+        }
+
+        const updateIcon = (dto) => {
+            last(dto.data, (value)=> {
+                fetch(`icons/${value.icon}.svg`)
+                    .then(response => response.text())
+                    .then(data => document.getElementById('icon').innerHTML = data)
+
+                document.getElementById('time').innerHTML        = isoToTime(value.time)
+                document.getElementById('temparature').innerHTML = `Temperature: ${value.temparature}°`
+                document.getElementById('humidity').innerHTML    = `Humidity: ${value.humidity}%`
+                document.getElementById('light').innerHTML       = `Light: ${value.light}%`
+            })            
+        }
+
+        const update = () => {
+            fetch('api/')
+                .then(response => response.json())
+                .then(dto => {
+                    updateChart(dto)
+                    updateIcon(dto)
+                })
+        }
+
+    
+        const updateChart = (dto) => {
+            chart.data.labels = dto.data.map( (value) => value.time)
+            chart.data.datasets[0].data = dto.data.map( (value) => value.moisture)
+            chart.data.datasets[1].data = dto.data.map( (value) => value.humidity)
+            chart.data.datasets[2].data = dto.data.map( (value) => value.temparature);
+            chart.data.datasets[3].data = dto.data.map( (value) => value.light)
+            document.getElementById('message').innerHTML = dto.message
+            chart.update();
+        }
+        setInterval(update,2000)
+    </script>
+</body>
+</html>
