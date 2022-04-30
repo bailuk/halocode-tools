@@ -4,7 +4,6 @@
 #  the definiton of the function to be tested and they are
 #  allways called on startup (from global scope).
 #  
-# I2C
 
 
 import halo
@@ -12,6 +11,7 @@ import event
 import time
 import mbuild
 
+# Global configuration for messaging and WLAN
 port   = 1883
 server = '10.66.4.39'
 ssl    = False
@@ -19,11 +19,17 @@ topic  = 'meteo'
 ssid   = ''
 pwd    = ''
 
+# Configure messaging in Global-Scope (If it does not work Device must be restarted)
 halo.cloud_message.start(topic_head = topic, server = server, port = port, ssl = ssl)
 
+# Intervall array and current selection for Intervall preselect via button
 intervals = [2, 5, 10, 15, 30, 60, 5*60, 15*60]
 interval_index = 0
 
+# Connects to WLAN and gives feedback to user about WLAN state
+# via LEDs.
+# Then goes into loop that continiously reads and broadcast
+# sensor values.
 @event.start
 def on_start():
     global ssid, pwd, intervals, interval_index
@@ -51,27 +57,34 @@ def on_start():
         timeout = timeout + 1        
         time.sleep(1)
 
+# Read and broadcast all connected sensors.
+# Broadcast is one message containing all information.
 def read_and_broadcast_sensors():
     values = [ 
         ['moisture',    mbuild.soil_moisture.get_humidity(index = 1)],
         ['humidity',    mbuild.humiture_sensor.get_relative_humidity(index = 1)],
-        ['temparature', mbuild.humiture_sensor.get_temperature(opt = 'celsius', index = 1)],
+        ['temperature', mbuild.humiture_sensor.get_temperature(opt = 'celsius', index = 1)],
         ['light',       mbuild.light_sensor.get_value(index = 1)]
     ]
     broadcast('sensors', to_json(values))
     
 
-def broadcast(message, msg):
-    halo.cloud_message.broadcast(message, msg)
+# Broadcast a message
+def broadcast(key, msg):
+    halo.cloud_message.broadcast(key, msg)
         
 
+# Broadcast an inforative text
 def broadcastText(msg):
     broadcast('message', msg)
 
 
+# Show a specific led
 def show_led(id, color, percentage = 10):
     halo.led.show_single(limit1(id), color[0], color[1], color[2], percentage)
 
+
+# Broadcast and display (via LEDs) the selected update intevall
 def show_interval():
     global interval_index, intervals
     offset = 3
@@ -85,6 +98,7 @@ def show_interval():
     broadcast('interval', str(intervals[interval_index]+1))
 
 
+# Cycle intervall via button press
 @event.button_pressed
 def on_pressed():
     global interval_index, intervals
@@ -92,28 +106,44 @@ def on_pressed():
     show_interval()
     
 
-@event.touchpad0_active
-def on_touchpad():
-    mbuild.servo_driver.set_angle(0, index = 1)
+# Servo goes up by 10°
+def servo_up():
+    pos = mbuild.servo_driver.get_angle(index = 1)
+    servo_set(pos + 10)
 
-@event.touchpad1_active
-def on_touchpad():
-    mbuild.servo_driver.set_angle(90, index = 1)
 
-@event.touchpad2_active
-def on_touchpad():
-    mbuild.servo_driver.set_angle(135, index = 1)
+# Servo goes down by 10°
+def servo_down():
+    pos = mbuild.servo_driver.get_angle(index = 1)
+    servo_set(pos - 10)
 
-@event.touchpad3_active
-def on_touchpad():
-    mbuild.servo_driver.set_angle(180, index = 1)
 
-@event.cloud_message('test')
+# Set servo to a value between 90 and 0 degree.
+# Values that are not in range will get cut.
+def servo_set(pos):
+    if (pos > 90): pos = 90
+    if (pos < 0): pos = 0
+    mbuild.servo_driver.set_angle(pos, index = 1)
+    broadcast('window', str(pos))
+
+
+# A request for a new window positon has been broadcasted.
+# Possible paramters: down, up, [0-90]
+@event.cloud_message('windowset')
 def received_message():
-    msg = halo.cloud_message.get_info('test')
-    print('message received: ' + msg)
+    msg = halo.cloud_message.get_info('windowset')
+    if msg == 'up': 
+        servo_up()
+    elif msg == 'down':
+        servo_down()
+    elif is_number(msg):
+        print(msg)
+        servo_set(int(msg))
+    else:
+        print('action unknown: ' + msg)
 
 
+# Is a variable a number?
 def is_number(value):
     try:
         value = int(value)
@@ -127,6 +157,7 @@ def test_is_number():
 
 test_is_number()
 
+# Translate Value to JSON Value. (Strings will be quoted, numbers not)
 def to_json_val(value):
     if is_number(value):
         return str(value)
@@ -139,6 +170,7 @@ def test_to_json_val():
 
 test_to_json_val()
 
+# Return a valid JSON text containing the key/values in the array
 def to_json(values):
     json = '{ '
     separator = ''
@@ -160,6 +192,9 @@ def test_to_json():
 test_to_json()
 
 
+# Increment to a limit. 
+# If value is greater than limit start with 0.
+# If value is smaller than 0 start with limit
 def inc(id, last):
     return limit(id+1, 0, last)
 
@@ -186,7 +221,7 @@ def test_limit():
 test_limit()
 
 
-
+# Translate Webcolor to RGB color
 def hex_to_color(color):
     start = 0
     if color[0] == '#':
@@ -208,4 +243,3 @@ def test_hex_to_color():
     if hex_to_color('304152')[2] != 82:  print('failed: hex_to_color 6')
 
 test_hex_to_color()
-

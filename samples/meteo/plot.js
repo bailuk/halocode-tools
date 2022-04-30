@@ -13,9 +13,26 @@
 
 let dto = {
     data: [],
-    message: ''
+    message: '',
+    window: 0,
+    auto: true
 }
 
+let calculatedPos = 0
+
+
+const { spawn } = require( 'child_process' );
+
+const exec = (cmd, pars) => {
+    const command = spawn(cmd, pars, {detached: true})
+    // console.log( `stderr: ${ command.stderr.toString() }` );
+    // console.log( `stdout: ${ command.stdout.toString() }` );
+}
+
+const sendMessage = (topic, message, value) => {
+    const msg = `{"message": "${message}", "value": "${value}"}`
+    exec('mosquitto_pub', ['-t', topic, '-m', msg])
+}
 
 const fs = require('fs')
 
@@ -37,16 +54,26 @@ app.get('/icons/:file', (req, res) => {
     sendFile(`weathericon/svg/${req.params.file}`, res)
 })
 
+
 app.put('/api/window/up', (req, res) => {
-    console.log('up')
+    dto.auto = false
+    sendMessage('meteo', 'windowset', 'up')
+    res.send("ok")
 })
 
 app.put('/api/window/down', (req, res) => {
-    console.log('down')
+    dto.auto = false
+    sendMessage('meteo', 'windowset', 'down')
+    res.send("ok")
+})
+
+app.put('/api/window/auto', (req, res) => {
+    dto.auto = true
+    res.send("ok")
 })
 
 
-sendFile=(file, res) => {
+const sendFile=(file, res) => {
     fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
             console.error(err)
@@ -57,6 +84,7 @@ sendFile=(file, res) => {
 }
 
 app.listen(port, () => console.log(`server is running on http://localhost:${port}`))
+
 
 process.stdin.on('data', data => {
     try {
@@ -74,11 +102,15 @@ process.stdin.on('data', data => {
         else if (obj.message == 'message') {
             dto.message = obj.value
         }
+        else if (obj.message == 'window') {
+            dto.window = obj.value
+        }
 
     } catch(error) {
         console.log(`Error: ${error}`)
     }
 });
+
 
 const iconFromSensors = (value) => {
     if          (value.light    > 50) {
@@ -95,3 +127,43 @@ const iconFromSensors = (value) => {
         else                          return 'clearsky_night'
     }
 }
+
+
+const getPosChange = (data) => {
+    if (data.temperature > 40) {
+        return 10
+    }
+
+    if (data.humidity > 90) {
+        return -100
+    }
+
+    if (data.temperature < 10) {
+        return -10
+    }
+
+    if (data.temperature < 20) {
+        return -5
+    }
+
+    if (data.temperature > 25) {
+        return 5
+    }
+    
+    return 0
+}
+
+
+const fireTimer = () => {
+    setTimeout(() => {
+        const data = dto.data[dto.data.length-1]
+
+        if (data) {
+            calculatedPos = Math.min(90, Math.max(0, calculatedPos + getPosChange(data)))
+            if (dto.auto) sendMessage('meteo', 'windowset', calculatedPos)
+        }
+        fireTimer()
+    }, 3000);
+}
+
+fireTimer()

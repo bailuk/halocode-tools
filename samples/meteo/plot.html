@@ -46,7 +46,7 @@
     <div class = "square">
         <div id="time" class = "topic">Wait for updates...</div>    
         <div id="icon"></div>
-        <div id="temparature"></div>
+        <div id="temperature"></div>
         <div id="humidity"></div>
         <div id="light"></div>
     </div>
@@ -58,8 +58,10 @@
 
     <div class = "square">
         <div class = "topic">Window</div>
+        <div id="window-pos"></div>
         <button onclick="window_up()">Up</button>
         <button onclick="window_down()">Down</button>
+        <button onclick="window_auto()">Automatic</button>
     </div>
 
     <div class = "chart">
@@ -104,7 +106,7 @@
                     borderColor: "green",
                     fill: false
                 }, {
-                    label: 'temparature',
+                    label: 'temperature',
                     data: [],
                     borderColor: "blue",
                     fill: false
@@ -138,7 +140,7 @@
                     .then(data => document.getElementById('icon').innerHTML = data)
 
                 document.getElementById('time').innerHTML        = isoToTime(value.time)
-                document.getElementById('temparature').innerHTML = `Temperature: ${value.temparature}°`
+                document.getElementById('temperature').innerHTML = `Temperature: ${value.temperature}°`
                 document.getElementById('humidity').innerHTML    = `Humidity: ${value.humidity}%`
                 document.getElementById('light').innerHTML       = `Light: ${value.light}%`
             })            
@@ -150,6 +152,7 @@
                 .then(dto => {
                     updateChart(dto)
                     updateIcon(dto)
+                    updateWindow(dto)
                 })
         }
 
@@ -158,13 +161,18 @@
             chart.data.labels = dto.data.map( (value) => value.time)
             chart.data.datasets[0].data = dto.data.map( (value) => value.moisture)
             chart.data.datasets[1].data = dto.data.map( (value) => value.humidity)
-            chart.data.datasets[2].data = dto.data.map( (value) => value.temparature);
+            chart.data.datasets[2].data = dto.data.map( (value) => value.temperature);
             chart.data.datasets[3].data = dto.data.map( (value) => value.light)
             document.getElementById('message').innerHTML = dto.message
             chart.update();
         }
         setInterval(update,2000)
 
+
+        const updateWindow = (dto) => {
+            const mode = dto.auto ? 'Automatic' :  'Manual'
+            document.getElementById('window-pos').innerHTML = `${mode} [${dto.window}°]`
+        }
 
         const window_down = () => {
             fetch('api/window/down', { method: 'PUT' })
@@ -173,6 +181,11 @@
         const window_up = () => {
             fetch('api/window/up', { method: 'PUT' })
         }
+
+        const window_auto = () => {
+            fetch('api/window/auto', { method: 'PUT' })
+        }
+
     </script>
 </body>
 </html>
