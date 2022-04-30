@@ -56,6 +56,12 @@
         <div id="message"></div>
     </div>
 
+    <div class = "square">
+        <div class = "topic">Window</div>
+        <button onclick="window_up()">Up</button>
+        <button onclick="window_down()">Down</button>
+    </div>
+
     <div class = "chart">
         <canvas id="myChart"></canvas>
     </div>
@@ -158,6 +164,15 @@
             chart.update();
         }
         setInterval(update,2000)
+
+
+        const window_down = () => {
+            fetch('api/window/down', { method: 'PUT' })
+        }
+
+        const window_up = () => {
+            fetch('api/window/up', { method: 'PUT' })
+        }
     </script>
 </body>
 </html>

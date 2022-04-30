@@ -37,6 +37,15 @@ app.get('/icons/:file', (req, res) => {
     sendFile(`weathericon/svg/${req.params.file}`, res)
 })
 
+app.put('/api/window/up', (req, res) => {
+    console.log('up')
+})
+
+app.put('/api/window/down', (req, res) => {
+    console.log('down')
+})
+
+
 sendFile=(file, res) => {
     fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
